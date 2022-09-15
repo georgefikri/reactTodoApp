@@ -31,7 +31,9 @@ function TodoList({ todos, setTodos }) {
         <NoTasks />
       )}
 
-      <button onClick={handleNavigateToAddNew}>new task</button>
+      <button className="new-task-button" onClick={handleNavigateToAddNew}>
+        <i className="fas fa-plus"></i>
+      </button>
     </div>
   );
 }

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Form({ setInputText, inputText, setTodos, todos }) {
   // states
+  const [isTaskAdded, setIsTaskAdded] = useState(false);
   const navigate = useNavigate();
 
   // functions
@@ -12,9 +13,19 @@ function Form({ setInputText, inputText, setTodos, todos }) {
   };
 
   const submitTodoHandler = (e) => {
-    e.preventDefault();
-    setInputText('');
-    setTodos([...todos, { text: inputText, completed: false, id: Math.random() * 1000 }]);
+    // when enter is pressed add the todo to the list
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      setInputText('');
+      setTodos([
+        ...todos,
+        { text: inputText, completed: false, id: Math.random() * 1000 },
+      ]);
+      setIsTaskAdded(true);
+      setTimeout(() => {
+        setIsTaskAdded(false);
+      }, 2500);
+    }
   };
 
   const handleNavigateBack = () => navigate('/');
@@ -23,8 +34,13 @@ function Form({ setInputText, inputText, setTodos, todos }) {
     <div className="create-new-task-container">
       <button className="back-btn" onClick={handleNavigateBack}>
         <i className="fas fa-angle-left "></i>
-        back
+        tasks
       </button>
+      {isTaskAdded && (
+        <div className="success-message">
+          <p>Task added successfully!</p>
+        </div>
+      )}
       <header>
         <h1>Create a new Task</h1>
       </header>
@@ -35,10 +51,11 @@ function Form({ setInputText, inputText, setTodos, todos }) {
           type="text"
           className="todo-input"
           placeholder="Add a new task"
+          onKeyDown={submitTodoHandler}
         />
-        <button className="todo-button" type="submit" onClick={submitTodoHandler}>
+        {/* <button className="todo-button" type="submit" onClick={submitTodoHandler}>
           <i className="fas fa-plus-square"></i>
-        </button>
+        </button> */}
       </form>
     </div>
   );
