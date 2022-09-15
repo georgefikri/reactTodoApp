@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+/* common blue #2798f7 */
+
+/* d2c0db &&  85bcf0 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+h1 {
+  color: #2798f7;
+}
+
+body {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d2c0db 0%, #85bcf0 100%);
+}
+header {
+  font-size: 2rem;
+  margin-bottom: 3.125rem;
+}
+
+/* common */
+
+header,
+form {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+}
+/******** tasks list **********/
+.todo-container, .create-new-task-container {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  position: absolute;
+  padding: 1.875rem 1.875rem 1.875rem 1.875rem;
+
+}
+
+.todo-container header, .create-new-task-container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  background: #ff6f47;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.complete-btn {
+  background: rgb(11, 212, 162);
+}
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+
+/******* form  ******/
+
+.create-new-task-container header {
+  margin-top: 1.875rem;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+  width: 100%
+}
+form button {
+  color: #ff6f47;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #ff6f47;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.create-new-task-container .back-btn {
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  background: transparent
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.create-new-task-container .back-btn i {
+  margin-right: 0.5rem;
 }
