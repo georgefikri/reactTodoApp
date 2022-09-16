@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+# Todo App with Reactjs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- add a todo item
+- change status done/undone
+- maintain data when refresh page
 
-## Available Scripts
+## links that helped me with some problems
 
-In the project directory, you can run:
+- [https://www.copycat.dev/blog/react-localstorage/] how to use localStorage with reactjs
 
 ### `npm start`
 
