@@ -3,6 +3,7 @@
 - add a todo item
 - change status done/undone
 - maintain data when refresh page
+- delete a todo item
 
 ## links that helped me with some problems
 
