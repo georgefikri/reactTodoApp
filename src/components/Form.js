@@ -45,12 +45,21 @@ function Form({ setInputText, inputText, setTodos, todos }) {
         <h1>Create a new Task</h1>
       </header>
       <form>
-        <input
+        {/* <input
           onChange={inputTextHandler}
           value={inputText}
           type="text"
           className="todo-input"
           placeholder="Add a new task"
+          onKeyDown={submitTodoHandler}
+        /> */}
+        {/* add a multiline input */}
+        <textarea
+          onChange={inputTextHandler}
+          value={inputText}
+          type="text"
+          className="todo-input"
+          placeholder="Add a new task and press enter to add"
           onKeyDown={submitTodoHandler}
         />
         {/* <button className="todo-button" type="submit" onClick={submitTodoHandler}>

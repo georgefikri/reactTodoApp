@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Todo from './Todo';
 import NoTasks from './NoTasks';
 import { useNavigate } from 'react-router-dom';
 
 function TodoList({ todos, setTodos }) {
   // states & variables
+  const [hasTaskDeleted, setHasTaskDeleted] = useState(false);
   const navigate = useNavigate();
 
   // functions
@@ -12,6 +13,11 @@ function TodoList({ todos, setTodos }) {
 
   return (
     <div className="todo-container">
+      {hasTaskDeleted && (
+        <div className="delete-message-success">
+          <p>Task deleted successfully!</p>
+        </div>
+      )}
       <header>
         <h1>Tasks</h1>
       </header>
@@ -24,6 +30,7 @@ function TodoList({ todos, setTodos }) {
               setTodos={setTodos}
               todos={todos}
               todo={todo}
+              setHasTaskDeleted={setHasTaskDeleted}
             />
           ))}
         </ul>

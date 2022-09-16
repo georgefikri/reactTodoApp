@@ -1,12 +1,15 @@
 import React from 'react';
 
-function Todo({ text, setTodos, todos, todo }) {
+function Todo({ text, setTodos, todos, todo, setHasTaskDeleted }) {
   // states
 
   // functions
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
-    console.log('todos', todos);
+    setHasTaskDeleted(true);
+    setTimeout(() => {
+      setHasTaskDeleted(false);
+    }, 2500);
   };
 
   const completeHandler = () => {
@@ -25,19 +28,19 @@ function Todo({ text, setTodos, todos, todo }) {
 
   // return jsx
   return (
-    <div className="todo">
+    <li className="todo">
       <button
         className={`complete-btn ${todo.completed && 'active'}`}
         onClick={completeHandler}
       >
         {todo.completed && <i className="fas fa-check"></i>}
       </button>
-      <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>{text}</li>
+      <label className={`todo-item ${todo.completed ? 'completed' : ''}`}>{text}</label>
 
       <button className="trash-btn" onClick={deleteHandler}>
         <i className="fas fa-trash"></i>
       </button>
-    </div>
+    </li>
   );
 }
 

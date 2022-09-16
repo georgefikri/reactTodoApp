@@ -20,7 +20,6 @@ body {
 }
 header {
   font-size: 2rem;
-  margin-bottom: 3.125rem;
 }
 
 /* common */
@@ -42,7 +41,7 @@ form {
   top: 50%;
   position: absolute;
   padding: 1.875rem 1.875rem 1.875rem 1.875rem;
-
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .create-new-task-container {
@@ -53,7 +52,11 @@ form {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 0.8rem;
+}
+
+.todo-container header {
+  margin-bottom: 1.875rem;
 }
 
 .todo-container .new-task-button {
@@ -83,6 +86,7 @@ form {
   transform: translateY(-7px);
 }
 
+
 .todo-list {
   min-width: 30%;
   list-style: none;
@@ -94,9 +98,11 @@ form {
   font-size: 1.5rem;
   color: black;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   transition: all 1s ease;
+  padding-left: 1.563rem;
+  width: 100%;
 }
 
 .todo li {
@@ -106,10 +112,16 @@ form {
   background: #ff6f47;
   color: white;
   border: none;
-  padding: 1rem;
-  cursor: pointer;
-  font-size: 1rem;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  outline: none;
 }
+
 .trash-btn,
 .complete-btn {
   padding: 1rem;
@@ -138,12 +150,13 @@ form {
   font-size: 1rem;
   margin-right: 1rem;
 
-
-
 }
 
 .todo-item {
-  padding: 0rem 0.5rem;
+  padding: 0rem 1rem 0.5rem 0.5rem;
+  word-break: break-all;
+  width: 100%;
+  
 }
 
 .fa-trash,
@@ -168,7 +181,7 @@ form {
   margin-top: 1.875rem;
 }
 
-form input,
+form textarea,
 form button {
   padding: 0.5rem;
   font-size: 2rem;
@@ -176,7 +189,30 @@ form button {
   background: white;
   width: 100%;
   outline: none;
+  color: #8f9ca5;
 }
+form textarea::placeholder {
+  color: #8f9ca5;
+  font-family: "Poppins", sans-serif;
+}
+
+form textarea {
+  height: auto;
+  min-height: 9rem;
+  line-height: 1.5;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  font-size: 1.5rem;
+  border: none;
+  background: white;
+  width: 100%;
+  outline: none;
+  color: #8f9ca5;
+  resize: none;
+}
+
+
+
+
 form button {
   color: #ff6f47;
   background: #f7fffe;
@@ -204,13 +240,12 @@ form button:hover {
   margin-right: 0.5rem;
 }
 
-.create-new-task-container .success-message {
+.create-new-task-container .success-message, .todo-container .delete-message-success {
   color: #4caf50;
   font-size: 1.5rem;
   width: 80%;
   font-weight: 700;
   margin-top: 1.875rem;
-  /* show the div as snackbar  */
   position: fixed;
   z-index: 1;
   left: 50%;
@@ -232,4 +267,8 @@ form button:hover {
   height: 200px;
   font-size: 2rem;
   color: #60b4f9;
+}
+
+.todo-container .delete-message-success {
+  color: #ff6f47;
 }
