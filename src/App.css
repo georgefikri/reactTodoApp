@@ -264,7 +264,6 @@ form button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
   font-size: 2rem;
   color: #60b4f9;
 }

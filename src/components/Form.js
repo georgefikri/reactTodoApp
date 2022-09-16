@@ -8,7 +8,6 @@ function Form({ setInputText, inputText, setTodos, todos }) {
 
   // functions
   const inputTextHandler = (e) => {
-    console.log(e.target.value);
     setInputText(e.target.value);
   };
 
@@ -30,6 +29,7 @@ function Form({ setInputText, inputText, setTodos, todos }) {
 
   const handleNavigateBack = () => navigate('/');
 
+  // jsx
   return (
     <div className="create-new-task-container">
       <button className="back-btn" onClick={handleNavigateBack}>
@@ -45,15 +45,6 @@ function Form({ setInputText, inputText, setTodos, todos }) {
         <h1>Create a new Task</h1>
       </header>
       <form>
-        {/* <input
-          onChange={inputTextHandler}
-          value={inputText}
-          type="text"
-          className="todo-input"
-          placeholder="Add a new task"
-          onKeyDown={submitTodoHandler}
-        /> */}
-        {/* add a multiline input */}
         <textarea
           onChange={inputTextHandler}
           value={inputText}
@@ -62,9 +53,6 @@ function Form({ setInputText, inputText, setTodos, todos }) {
           placeholder="Add a new task and press enter to add"
           onKeyDown={submitTodoHandler}
         />
-        {/* <button className="todo-button" type="submit" onClick={submitTodoHandler}>
-          <i className="fas fa-plus-square"></i>
-        </button> */}
       </form>
     </div>
   );

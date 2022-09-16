@@ -1,8 +1,6 @@
 import React from 'react';
 
 function Todo({ text, setTodos, todos, todo, setHasTaskDeleted }) {
-  // states
-
   // functions
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
@@ -26,7 +24,7 @@ function Todo({ text, setTodos, todos, todo, setHasTaskDeleted }) {
     );
   };
 
-  // return jsx
+  //jsx
   return (
     <li className="todo">
       <button

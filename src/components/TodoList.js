@@ -11,6 +11,7 @@ function TodoList({ todos, setTodos }) {
   // functions
   const handleNavigateToAddNew = () => navigate('/newTask');
 
+  // jsx
   return (
     <div className="todo-container">
       {hasTaskDeleted && (

@@ -14,12 +14,11 @@ function App() {
   });
 
   // hooks
-
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
 
-  // return jsx
+  //jsx
   return (
     <BrowserRouter>
       <Routes>
