@@ -6,7 +6,7 @@
 
 ## links that helped me with some problems
 
-- [https://www.copycat.dev/blog/react-localstorage/](how to use localStorage with reactjs)
+[https://www.copycat.dev/blog/react-localstorage](how to use localStorage with reactjs)
 
 ### `npm start`
 
